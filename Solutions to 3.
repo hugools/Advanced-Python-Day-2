@@ -1,0 +1,11 @@
+Qa. Investigate the performance of the matmult.py script. In which line(s) of the script would you start optimizing for speed? 
+Ran "python -m cProfile matmult.py" after dividing the generation of the two matrices into one funtion each and the matrix multiplication into a third function.
+Then finished the script by running the three functions. The matrix multiplication takes almost all the time, so this is where I would start optimizing.
+
+Qb. Investigate the performance of the euler72.py script
+In which line(s) of the script would you start optimizing for speed? 
+Ran "kernprof -l -v euler72.py" in the terminal from the cloned directory with exercises for day 2. Out of the four functions, fast_phi took the longest, about 0.1 us,
+compared to <0.05 us for the rest. Here, line "factors = factorize(n,primes)" took almost 90% of the time, so I would start optimizing from here.
+
+Qc. You can use numpy. Replacing the multiplication function I made in Qa with np.matmul(X,Y) and assigning result to this instead, 
+I shortened the runtime of the program approximately 5-6 times-
